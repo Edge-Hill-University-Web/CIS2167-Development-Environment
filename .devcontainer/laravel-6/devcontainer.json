@@ -1,0 +1,64 @@
+{
+  // Author: Dan Campbell
+  // Module : CIS2167
+  // Academic Year: 2023-2024
+  "name": "CIS2167-Laravel-6",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "..",
+    "args": {
+      "VARIANT": "3.9"
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "14",
+      "nvmVersion": "latest"
+    }
+  },
+
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}/Projects/laravel-6",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "/bin/bash"
+          }
+        },
+        "terminal.integrated.defaultProfile.osx": "bash",
+        "terminal.integrated.profiles.osx": {
+          "bash": {
+            "path": "/bin/bash"
+          }
+        },
+        "terminal.integrated.defaultProfile.windwows": "bash",
+        "terminal.integrated.profiles.windows": {
+          "bash": {
+            "path": "/bin/bash"
+          }
+        }
+      },
+      "python.defaultInterpreterPath": "/usr/local/bin/python",
+      "python.languageServer": "Default",
+      "python.linting.enabled": true,
+      "python.linting.pylintEnabled": true
+    },
+    "extensions": [
+      "ms-vsliveshare.vsliveshare",
+      "xdebug.php-debug",
+      "antfu.browse-lite",
+      "yzhang.markdown-all-in-one"
+    ]
+  },
+  "onCreateCommand":  "sudo apt update && sudo apt install software-properties-common -y && sudo apt install libarchive-tools -y && sudo apt install python2.7 -y && sudo apt install python-pip -y && sudo add-apt-repository ppa:ondrej/php -y && sudo apt update && sudo apt install php7.2 -y && apt-get install php7.2-mysql php7.2-curl php7.2-mbstring php7.2-json php7.2-xml php7.2-bcmath php7.2-ctype php7.2-fileinfo php7.2-pdo php7.2-tokenizer -y && php -r \"copy('https://getcomposer.org/installer', 'composer-setup.php');\" && php -r \"if (hash_file('sha384', 'composer-setup.php') === 'e21205b207c3ff031906575712edab6f13eb0b361f2085f1f1237b7126d785e826a450292b6cfd1d64d92e6563bbde02') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;\" && php composer-setup.php --version=2.0.5 --install-dir=/usr/local/bin --filename=composer && php -r \"unlink('composer-setup.php');\"&& composer global require laravel/installer && composer require --dev phpunit/phpunit ^8.5 && touch ~/.bash_aliases && echo \"alias phpunit='${containerWorkspaceFolder}/vendor/bin/phpunit'\" >> ~/.bashrc && sudo apt -y install gcc g++ make",
+  
+  
+  "runArgs": [
+    "--name",
+    "CIS2167_Laravel_6"
+  ],
+  "remoteUser": "root"
+ 
+}
