@@ -1,2 +1,10 @@
-# CIS2167-Development-Environment
-A Visual Studio Development Environment for CIS2167. This environment provides containers for Buliding Laravel 5 and Laravel 6 Web Applications.
+# CIS2167 Web Application Development Dev Container for VS-Code
+
+VS-Code Development Container for CIS2167 Web Application Development.
+
+
+This container is configured to build laravel 5 and 6 applications
+
+## Warning
+
+Do not modify anything within the `.devcontainer` directory unless instructed to do so.

@@ -1,0 +1,1 @@
+This directory will be used for all the Laravel 5 Applications you will develop as part of this module.
